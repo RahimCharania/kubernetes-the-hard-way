@@ -62,6 +62,13 @@ Retrieve the full name of the `busybox` pod:
 POD_NAME=$(kubectl get pods -l run=busybox -o jsonpath="{.items[0].metadata.name}")
 ```
 
+
+Create the clusterrolebinding as
+
+```
+kubectl create clusterrolebinding apiserver-kubelet-api-admin --clusterrole system:kubelet-api-admin --user kubernetes
+```
+
 Execute a DNS lookup for the `kubernetes` service inside the `busybox` pod:
 
 ```
